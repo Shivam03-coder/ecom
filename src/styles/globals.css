@@ -3,10 +3,54 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root,
+  .app {
+    height: 100vh;
+    width: 100%;
+    @apply font-lexend;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply text-xl font-medium;
+  }
+
+  h5 {
+    @apply text-lg font-medium;
+  }
+
+  h6 {
+    @apply text-base font-medium;
+  }
+}
+
 @theme {
-  --font-sans:
-    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: var(--font-geist);
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-lexend: var(--font-lexend);
+  --font-manrope: var(--font-manrope);
+  --font-space: var(--font-space-grotesk);
 }
 
 @theme inline {
@@ -116,11 +160,6 @@
   --sidebar-ring: oklch(0.527 0.154 150.069);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+@utility center {
+  @apply flex items-center justify-center;
 }
